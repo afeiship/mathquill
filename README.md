@@ -11,6 +11,9 @@
 npm install @jswork/mathquill
 ```
 
+## resources
+- https://github.com/mathquill/mathquill/issues/658
+
 ## license
 Code released under [the MIT license](https://github.com/afeiship/mathquill/blob/master/LICENSE.txt).
 
