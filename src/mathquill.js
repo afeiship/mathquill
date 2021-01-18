@@ -10,7 +10,7 @@
 
 (function() {
 var global = typeof window !== 'undefined' ? window : this || Function('return this')();
-var jQuery = global.jQuery || require('jquery');,
+var jQuery = global.jQuery || require('jquery'),
   undefined,
   mqCmdId = 'mathquill-command-id',
   mqBlockId = 'mathquill-block-id',
