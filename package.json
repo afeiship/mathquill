@@ -36,5 +36,12 @@
     "@edtr-io/mathquill": "^0.11.0",
     "i": "^0.3.6",
     "npm": "^6.14.11"
-  }
+  },
+  "keywords": [
+    "mathquill",
+    "math",
+    "latex",
+    "katex",
+    "editor"
+  ]
 }
