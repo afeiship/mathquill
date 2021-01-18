@@ -8,9 +8,9 @@
  * one at http://mozilla.org/MPL/2.0/.
  */
 
-(function () {
+(function() {
   var global = typeof window !== 'undefined' ? window : this || Function('return this')();
-  var jQuery = global.jQuery,
+  var jQuery = global.jQuery || require('jquery'),
     undefined,
     mqCmdId = 'mathquill-command-id',
     mqBlockId = 'mathquill-block-id',
@@ -5287,42 +5287,40 @@ case '!':
     })(key, MQ1[key]);
 
   /** Add by @jswork/mathquill */
-  (function () {
-    /** Detect free variable `global` from Node.js. */
-    var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
 
-    /** Detect free variable `self`. */
-    var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+  /** Detect free variable `global` from Node.js. */
+  var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
 
-    /** Used as a reference to the global object. */
-    var root = freeGlobal || freeSelf || Function('return this')();
+  /** Detect free variable `self`. */
+  var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
 
-    /** Detect free variable `exports`. */
-    var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
+  /** Used as a reference to the global object. */
+  var root = freeGlobal || freeSelf || Function('return this')();
 
-    /** Detect free variable `module`. */
-    var freeModule =
-      freeExports && typeof module == 'object' && module && !module.nodeType && module;
+  /** Detect free variable `exports`. */
+  var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
 
-    // Some AMD build optimizers, like r.js, check for condition patterns like:
-    if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
-      root.MathQuill = MathQuill;
+  /** Detect free variable `module`. */
+  var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
 
-      // Define as an anonymous module so, through path mapping, it can be
-      // referenced as the "underscore" module.
-      define(function () {
-        return MathQuill;
-      });
-    }
-    // Check for `exports` after `define` in case a build optimizer adds it.
-    else if (freeModule) {
-      // Export for Node.js.
-      (freeModule.exports = MathQuill).MathQuill = MathQuill;
-      // Export for CommonJS support.
-      freeExports.MathQuill = MathQuill;
-    } else {
-      // Export to the global object.
-      root.MathQuill = MathQuill;
-    }
-  })();
-})();
+  // Some AMD build optimizers, like r.js, check for condition patterns like:
+  if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
+    root.MathQuill = MathQuill;
+
+    // Define as an anonymous module so, through path mapping, it can be
+    // referenced as the "underscore" module.
+    define(function () {
+      return MathQuill;
+    });
+  }
+  // Check for `exports` after `define` in case a build optimizer adds it.
+  else if (freeModule) {
+    // Export for Node.js.
+    (freeModule.exports = MathQuill).MathQuill = MathQuill;
+    // Export for CommonJS support.
+    freeExports.MathQuill = MathQuill;
+  } else {
+    // Export to the global object.
+    root.MathQuill = MathQuill;
+  }
+}());
